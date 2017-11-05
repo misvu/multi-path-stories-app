@@ -19,13 +19,13 @@
             <tr>
                 <td></td>
                 <td>
-                    {% if topLink %}
-                    <a href="/story/{{ topLink }}">{{ topSentence }}</a>
+                    {% if top_story_id %}
+                    <a href="/story/{{ top_story_id }}">{{ top_sentence }}</a>
                     {% else%}
-                    <form action="/new_story" method="POST" name="topForm">
+                    <form action="/new_story" method="POST">
                         <input type="hidden" name="position" value="top">
-                        <input type ="hidden" name="currentStory" value="{{ currentStory }}">
-                        <textarea name="newSentence"></textarea>
+                        <input type ="hidden" name="current_story_id" value="{{ current_story_id }}">
+                        <textarea name="new_sentence"></textarea>
                         <div><input type="submit"></div>
                     </form>
                     {% endif %}
@@ -35,26 +35,26 @@
 
             <tr>
                 <td>
-                    {% if leftLink %}
-                        <a href="/story/{{ leftLink }}">{{ leftSentence }}</a>
+                    {% if left_story_id %}
+                        <a href="/story/{{ left_story_id }}">{{ left_sentence }}</a>
                     {% else%}
-                    <form action="/new_story" method="POST" name="leftForm">
+                    <form action="/new_story" method="POST">
                         <input type="hidden" name="position" value="left">
-                        <input type ="hidden" name="currentStory" value="{{ currentStory }}">
-                        <textarea name="newSentence"></textarea>
+                        <input type ="hidden" name="current_story_id" value="{{ current_story_id }}">
+                        <textarea name="new_sentence"></textarea>
                         <div><input type="submit"></div>
                     </form>
                     {% endif %}
                 </td>
-                <td>{{ mainSentence }}</td>
+                <td>{{ main_sentence }}</td>
                 <td>
-                        {% if rightLink %}
-                        <a href="/story/{{ rightLink }}">{{ rightSentence }}</a>
+                        {% if right_story_id %}
+                        <a href="/story/{{ right_story_id }}">{{ right_sentence }}</a>
                     {% else%}
-                    <form action="/new_story" method="POST" name="rightForm">
+                    <form action="/new_story" method="POST">
                     <input type="hidden" name="position" value="right">
-                        <input type ="hidden" name="currentStory" value="{{ currentStory }}">
-                        <textarea name="newSentence"></textarea>
+                        <input type ="hidden" name="current_story_id" value="{{ current_story_id }}">
+                        <textarea name="new_sentence"></textarea>
                         <div><input type="submit"></div>
                     </form>
                     {% endif %}
@@ -64,13 +64,13 @@
             <tr>
                 <td></td>
                  <td>
-                         {% if bottomLink %}
-                        <a href="/story/{{ bottomLink }}">{{ bottomSentence }}</a>
+                         {% if bottom_story_id %}
+                        <a href="/story/{{ bottom_story_id }}">{{ bottom_sentence }}</a>
                     {% else%}
-                    <form action="/new_story" method="POST" name="bottomForm">
+                    <form action="/new_story" method="POST">
                      <input type="hidden" name="position" value="bottom">
-                        <input type ="hidden" name="currentStory" value="{{ currentStory }}">
-                        <textarea name="newSentence"></textarea>
+                        <input type ="hidden" name="current_story_id" value="{{ current_story_id }}">
+                        <textarea name="new_sentence"></textarea>
                         <div><input type="submit"></div>
                     </form>
                      {% endif %}
