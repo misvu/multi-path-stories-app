@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Multi-path stories Web application</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <div class="container">
+
+    <header>
+        <h1>Multi-path stories Web application</h1>
+    </header>
+
+    <main>
+        <a href="/">Back to start</a>
+        <table>
+            <tr>
+                <td></td>
+                <td>
+                    {% if topLink %}
+                    <a href="/story/{{ topLink }}">{{ topSentence }}</a>
+                    {% else%}
+                    <form action="/new_story" method="POST" name="topForm">
+                        <input type="hidden" name="position" value="top">
+                        <input type ="hidden" name="currentStory" value="{{ currentStory }}">
+                        <textarea name="newSentence"></textarea>
+                        <div><input type="submit"></div>
+                    </form>
+                    {% endif %}
+                </td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <td>
+                    {% if leftLink %}
+                        <a href="/story/{{ leftLink }}">{{ leftSentence }}</a>
+                    {% else%}
+                    <form action="/new_story" method="POST" name="leftForm">
+                        <input type="hidden" name="position" value="left">
+                        <input type ="hidden" name="currentStory" value="{{ currentStory }}">
+                        <textarea name="newSentence"></textarea>
+                        <div><input type="submit"></div>
+                    </form>
+                    {% endif %}
+                </td>
+                <td>{{ mainSentence }}</td>
+                <td>
+                        {% if rightLink %}
+                        <a href="/story/{{ rightLink }}">{{ rightSentence }}</a>
+                    {% else%}
+                    <form action="/new_story" method="POST" name="rightForm">
+                    <input type="hidden" name="position" value="right">
+                        <input type ="hidden" name="currentStory" value="{{ currentStory }}">
+                        <textarea name="newSentence"></textarea>
+                        <div><input type="submit"></div>
+                    </form>
+                    {% endif %}
+                </td>
+             </tr>
+
+            <tr>
+                <td></td>
+                 <td>
+                         {% if bottomLink %}
+                        <a href="/story/{{ bottomLink }}">{{ bottomSentence }}</a>
+                    {% else%}
+                    <form action="/new_story" method="POST" name="bottomForm">
+                     <input type="hidden" name="position" value="bottom">
+                        <input type ="hidden" name="currentStory" value="{{ currentStory }}">
+                        <textarea name="newSentence"></textarea>
+                        <div><input type="submit"></div>
+                    </form>
+                     {% endif %}
+                 </td>
+                 <td></td>
+             </tr>
+
+         </table>
+    </main>
+    <footer>
+
+    </footer>
+
+    </div>
+</body>
+</html>
