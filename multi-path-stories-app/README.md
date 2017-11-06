@@ -1,4 +1,4 @@
-# Multi-path story application report
+# Multi-path stories application
 
 The application consist of a simple table design with little CSS-styling where the user can input stories. 
 The application starts with a story sentence: "Once upon a time there was a girl who wanted to fly".
